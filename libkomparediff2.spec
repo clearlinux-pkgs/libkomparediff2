@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : libkomparediff2
-Version  : 18.12.3
-Release  : 5
-URL      : https://download.kde.org/stable/applications/18.12.3/src/libkomparediff2-18.12.3.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.12.3/src/libkomparediff2-18.12.3.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.12.3/src/libkomparediff2-18.12.3.tar.xz.sig
+Version  : 19.04.0
+Release  : 6
+URL      : https://download.kde.org/stable/applications/19.04.0/src/libkomparediff2-19.04.0.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.04.0/src/libkomparediff2-19.04.0.tar.xz
+Source99 : https://download.kde.org/stable/applications/19.04.0/src/libkomparediff2-19.04.0.tar.xz.sig
 Summary  : Library to compare files and strings
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -59,14 +59,14 @@ locales components for the libkomparediff2 package.
 
 
 %prep
-%setup -q -n libkomparediff2-18.12.3
+%setup -q -n libkomparediff2-19.04.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1555351899
+export SOURCE_DATE_EPOCH=1555624784
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -74,9 +74,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1555351899
+export SOURCE_DATE_EPOCH=1555624784
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkomparediff2
+cp COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/COPYING
 cp COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkomparediff2/COPYING-CMAKE-SCRIPTS
 cp COPYING.GPL2 %{buildroot}/usr/share/package-licenses/libkomparediff2/COPYING.GPL2
 cp COPYING.GPL3 %{buildroot}/usr/share/package-licenses/libkomparediff2/COPYING.GPL3
@@ -116,6 +117,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/libkomparediff2/COPYING
 /usr/share/package-licenses/libkomparediff2/COPYING-CMAKE-SCRIPTS
 /usr/share/package-licenses/libkomparediff2/COPYING.GPL2
 /usr/share/package-licenses/libkomparediff2/COPYING.GPL3

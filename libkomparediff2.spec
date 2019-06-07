@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : libkomparediff2
-Version  : 19.04.1
-Release  : 8
-URL      : https://download.kde.org/stable/applications/19.04.1/src/libkomparediff2-19.04.1.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.04.1/src/libkomparediff2-19.04.1.tar.xz
-Source99 : https://download.kde.org/stable/applications/19.04.1/src/libkomparediff2-19.04.1.tar.xz.sig
+Version  : 19.04.2
+Release  : 9
+URL      : https://download.kde.org/stable/applications/19.04.2/src/libkomparediff2-19.04.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.04.2/src/libkomparediff2-19.04.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/19.04.2/src/libkomparediff2-19.04.2.tar.xz.sig
 Summary  : Library to compare files and strings
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -60,14 +60,14 @@ locales components for the libkomparediff2 package.
 
 
 %prep
-%setup -q -n libkomparediff2-19.04.1
+%setup -q -n libkomparediff2-19.04.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557459275
+export SOURCE_DATE_EPOCH=1559909175
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -82,7 +82,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1557459275
+export SOURCE_DATE_EPOCH=1559909175
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkomparediff2
 cp COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/COPYING

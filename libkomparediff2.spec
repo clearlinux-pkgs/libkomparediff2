@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : libkomparediff2
-Version  : 19.12.0
-Release  : 15
-URL      : https://download.kde.org/stable/release-service/19.12.0/src/libkomparediff2-19.12.0.tar.xz
-Source0  : https://download.kde.org/stable/release-service/19.12.0/src/libkomparediff2-19.12.0.tar.xz
-Source1  : https://download.kde.org/stable/release-service/19.12.0/src/libkomparediff2-19.12.0.tar.xz.sig
+Version  : 19.12.1
+Release  : 16
+URL      : https://download.kde.org/stable/release-service/19.12.1/src/libkomparediff2-19.12.1.tar.xz
+Source0  : https://download.kde.org/stable/release-service/19.12.1/src/libkomparediff2-19.12.1.tar.xz
+Source1  : https://download.kde.org/stable/release-service/19.12.1/src/libkomparediff2-19.12.1.tar.xz.sig
 Summary  : Library to compare files and strings
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -60,15 +60,15 @@ locales components for the libkomparediff2 package.
 
 
 %prep
-%setup -q -n libkomparediff2-19.12.0
-cd %{_builddir}/libkomparediff2-19.12.0
+%setup -q -n libkomparediff2-19.12.1
+cd %{_builddir}/libkomparediff2-19.12.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576581392
+export SOURCE_DATE_EPOCH=1578684953
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -85,16 +85,16 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1576581392
+export SOURCE_DATE_EPOCH=1578684953
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkomparediff2
-cp %{_builddir}/libkomparediff2-19.12.0/COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/541b0656333a7c85cf7948e10c49450de547817f
-cp %{_builddir}/libkomparediff2-19.12.0/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkomparediff2/ff3ed70db4739b3c6747c7f624fe2bad70802987
-cp %{_builddir}/libkomparediff2-19.12.0/COPYING.GPL2 %{buildroot}/usr/share/package-licenses/libkomparediff2/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/libkomparediff2-19.12.0/COPYING.GPL3 %{buildroot}/usr/share/package-licenses/libkomparediff2/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/libkomparediff2-19.12.0/COPYING.LGPL2 %{buildroot}/usr/share/package-licenses/libkomparediff2/ba8966e2473a9969bdcab3dc82274c817cfd98a1
-cp %{_builddir}/libkomparediff2-19.12.0/COPYING.LGPL2.1 %{buildroot}/usr/share/package-licenses/libkomparediff2/01a6b4bf79aca9b556822601186afab86e8c4fbf
-cp %{_builddir}/libkomparediff2-19.12.0/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/libkomparediff2/f45ee1c765646813b442ca58de72e20a64a7ddba
+cp %{_builddir}/libkomparediff2-19.12.1/COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/541b0656333a7c85cf7948e10c49450de547817f
+cp %{_builddir}/libkomparediff2-19.12.1/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkomparediff2/ff3ed70db4739b3c6747c7f624fe2bad70802987
+cp %{_builddir}/libkomparediff2-19.12.1/COPYING.GPL2 %{buildroot}/usr/share/package-licenses/libkomparediff2/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/libkomparediff2-19.12.1/COPYING.GPL3 %{buildroot}/usr/share/package-licenses/libkomparediff2/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/libkomparediff2-19.12.1/COPYING.LGPL2 %{buildroot}/usr/share/package-licenses/libkomparediff2/ba8966e2473a9969bdcab3dc82274c817cfd98a1
+cp %{_builddir}/libkomparediff2-19.12.1/COPYING.LGPL2.1 %{buildroot}/usr/share/package-licenses/libkomparediff2/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/libkomparediff2-19.12.1/COPYING.LGPL3 %{buildroot}/usr/share/package-licenses/libkomparediff2/f45ee1c765646813b442ca58de72e20a64a7ddba
 pushd clr-build
 %make_install
 popd

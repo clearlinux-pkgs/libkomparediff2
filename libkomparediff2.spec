@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : libkomparediff2
-Version  : 22.04.1
-Release  : 40
-URL      : https://download.kde.org/stable/release-service/22.04.1/src/libkomparediff2-22.04.1.tar.xz
-Source0  : https://download.kde.org/stable/release-service/22.04.1/src/libkomparediff2-22.04.1.tar.xz
-Source1  : https://download.kde.org/stable/release-service/22.04.1/src/libkomparediff2-22.04.1.tar.xz.sig
+Version  : 22.04.2
+Release  : 41
+URL      : https://download.kde.org/stable/release-service/22.04.2/src/libkomparediff2-22.04.2.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.04.2/src/libkomparediff2-22.04.2.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.04.2/src/libkomparediff2-22.04.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 LGPL-2.0
@@ -71,15 +71,15 @@ locales components for the libkomparediff2 package.
 
 
 %prep
-%setup -q -n libkomparediff2-22.04.1
-cd %{_builddir}/libkomparediff2-22.04.1
+%setup -q -n libkomparediff2-22.04.2
+cd %{_builddir}/libkomparediff2-22.04.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1652636476
+export SOURCE_DATE_EPOCH=1654823147
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -95,13 +95,13 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1652636476
+export SOURCE_DATE_EPOCH=1654823147
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkomparediff2
-cp %{_builddir}/libkomparediff2-22.04.1/COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/3bbe716f8282e9688952d7abe4c1612794fe790d
-cp %{_builddir}/libkomparediff2-22.04.1/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkomparediff2/ff3ed70db4739b3c6747c7f624fe2bad70802987
-cp %{_builddir}/libkomparediff2-22.04.1/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/libkomparediff2/e712eadfab0d2357c0f50f599ef35ee0d87534cb
-cp %{_builddir}/libkomparediff2-22.04.1/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/libkomparediff2/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/libkomparediff2-22.04.2/COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/3bbe716f8282e9688952d7abe4c1612794fe790d
+cp %{_builddir}/libkomparediff2-22.04.2/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/libkomparediff2/ff3ed70db4739b3c6747c7f624fe2bad70802987
+cp %{_builddir}/libkomparediff2-22.04.2/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/libkomparediff2/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+cp %{_builddir}/libkomparediff2-22.04.2/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/libkomparediff2/20079e8f79713dce80ab09774505773c926afa2a
 pushd clr-build
 %make_install
 popd

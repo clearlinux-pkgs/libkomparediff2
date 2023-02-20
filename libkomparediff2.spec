@@ -6,7 +6,7 @@
 #
 Name     : libkomparediff2
 Version  : 22.12.2
-Release  : 49
+Release  : 50
 URL      : https://download.kde.org/stable/release-service/22.12.2/src/libkomparediff2-22.12.2.tar.xz
 Source0  : https://download.kde.org/stable/release-service/22.12.2/src/libkomparediff2-22.12.2.tar.xz
 Source1  : https://download.kde.org/stable/release-service/22.12.2/src/libkomparediff2-22.12.2.tar.xz.sig
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1675638591
+export SOURCE_DATE_EPOCH=1676863374
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -98,7 +98,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1675638591
+export SOURCE_DATE_EPOCH=1676863374
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkomparediff2
 cp %{_builddir}/libkomparediff2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/3bbe716f8282e9688952d7abe4c1612794fe790d || :

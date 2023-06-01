@@ -7,7 +7,7 @@
 #
 Name     : libkomparediff2
 Version  : 23.04.1
-Release  : 53
+Release  : 54
 URL      : https://download.kde.org/stable/release-service/23.04.1/src/libkomparediff2-23.04.1.tar.xz
 Source0  : https://download.kde.org/stable/release-service/23.04.1/src/libkomparediff2-23.04.1.tar.xz
 Source1  : https://download.kde.org/stable/release-service/23.04.1/src/libkomparediff2-23.04.1.tar.xz.sig
@@ -83,7 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684776103
+export SOURCE_DATE_EPOCH=1685642086
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -116,7 +116,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684776103
+export SOURCE_DATE_EPOCH=1685642086
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkomparediff2
 cp %{_builddir}/libkomparediff2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/3bbe716f8282e9688952d7abe4c1612794fe790d || :
@@ -141,7 +141,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libkomparediff2.so
 /usr/include/KompareDiff2/komparediff2_version.h
 /usr/include/KompareDiff2/libkomparediff2/diff2_export.h
 /usr/include/KompareDiff2/libkomparediff2/difference.h
@@ -161,7 +160,6 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libkomparediff2.so.5
 /V3/usr/lib64/libkomparediff2.so.5.3
 /usr/lib64/libkomparediff2.so.5
 /usr/lib64/libkomparediff2.so.5.3

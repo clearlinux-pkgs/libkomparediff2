@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : libkomparediff2
-Version  : 23.04.2
-Release  : 55
-URL      : https://download.kde.org/stable/release-service/23.04.2/src/libkomparediff2-23.04.2.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.04.2/src/libkomparediff2-23.04.2.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.04.2/src/libkomparediff2-23.04.2.tar.xz.sig
+Version  : 23.04.3
+Release  : 56
+URL      : https://download.kde.org/stable/release-service/23.04.3/src/libkomparediff2-23.04.3.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.04.3/src/libkomparediff2-23.04.3.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.04.3/src/libkomparediff2-23.04.3.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 LGPL-2.0
@@ -75,15 +75,15 @@ locales components for the libkomparediff2 package.
 
 
 %prep
-%setup -q -n libkomparediff2-23.04.2
-cd %{_builddir}/libkomparediff2-23.04.2
+%setup -q -n libkomparediff2-23.04.3
+cd %{_builddir}/libkomparediff2-23.04.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686503019
+export SOURCE_DATE_EPOCH=1688837530
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -116,7 +116,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1686503019
+export SOURCE_DATE_EPOCH=1688837530
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkomparediff2
 cp %{_builddir}/libkomparediff2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/3bbe716f8282e9688952d7abe4c1612794fe790d || :
@@ -160,9 +160,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libkomparediff2.so.5.3
+/V3/usr/lib64/libkomparediff2.so.5.3.0
 /usr/lib64/libkomparediff2.so.5
-/usr/lib64/libkomparediff2.so.5.3
+/usr/lib64/libkomparediff2.so.5.3.0
 
 %files license
 %defattr(0644,root,root,0755)

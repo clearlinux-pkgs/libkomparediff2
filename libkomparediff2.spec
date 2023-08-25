@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : libkomparediff2
-Version  : 23.04.3
-Release  : 56
-URL      : https://download.kde.org/stable/release-service/23.04.3/src/libkomparediff2-23.04.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.04.3/src/libkomparediff2-23.04.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.04.3/src/libkomparediff2-23.04.3.tar.xz.sig
+Version  : 23.08.0
+Release  : 57
+URL      : https://download.kde.org/stable/release-service/23.08.0/src/libkomparediff2-23.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.08.0/src/libkomparediff2-23.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.08.0/src/libkomparediff2-23.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0 LGPL-2.0
@@ -75,15 +75,15 @@ locales components for the libkomparediff2 package.
 
 
 %prep
-%setup -q -n libkomparediff2-23.04.3
-cd %{_builddir}/libkomparediff2-23.04.3
+%setup -q -n libkomparediff2-23.08.0
+cd %{_builddir}/libkomparediff2-23.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688837530
+export SOURCE_DATE_EPOCH=1692998353
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -116,7 +116,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1688837530
+export SOURCE_DATE_EPOCH=1692998353
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkomparediff2
 cp %{_builddir}/libkomparediff2-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libkomparediff2/3bbe716f8282e9688952d7abe4c1612794fe790d || :
@@ -141,8 +141,29 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
+/usr/include/KompareDiff2/KompareDiff2/DiffHunk
+/usr/include/KompareDiff2/KompareDiff2/DiffModel
+/usr/include/KompareDiff2/KompareDiff2/DiffModelList
+/usr/include/KompareDiff2/KompareDiff2/DiffSettings
+/usr/include/KompareDiff2/KompareDiff2/Difference
+/usr/include/KompareDiff2/KompareDiff2/DifferenceString
+/usr/include/KompareDiff2/KompareDiff2/Kompare
+/usr/include/KompareDiff2/KompareDiff2/KompareModelList
+/usr/include/KompareDiff2/KompareDiff2/Marker
+/usr/include/KompareDiff2/KompareDiff2/SettingsBase
+/usr/include/KompareDiff2/komparediff2/difference.h
+/usr/include/KompareDiff2/komparediff2/diffhunk.h
+/usr/include/KompareDiff2/komparediff2/diffmodel.h
+/usr/include/KompareDiff2/komparediff2/diffmodellist.h
+/usr/include/KompareDiff2/komparediff2/diffsettings.h
+/usr/include/KompareDiff2/komparediff2/kompare.h
+/usr/include/KompareDiff2/komparediff2/komparediff2_export.h
+/usr/include/KompareDiff2/komparediff2/komparemodellist.h
+/usr/include/KompareDiff2/komparediff2/marker.h
+/usr/include/KompareDiff2/komparediff2/settingsbase.h
 /usr/include/KompareDiff2/komparediff2_version.h
 /usr/include/KompareDiff2/libkomparediff2/diff2_export.h
+/usr/include/KompareDiff2/libkomparediff2/diff2_export_p.h
 /usr/include/KompareDiff2/libkomparediff2/difference.h
 /usr/include/KompareDiff2/libkomparediff2/diffhunk.h
 /usr/include/KompareDiff2/libkomparediff2/diffmodel.h
@@ -160,9 +181,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libkomparediff2.so.5.3.0
+/V3/usr/lib64/libkomparediff2.so.5.4.0
 /usr/lib64/libkomparediff2.so.5
-/usr/lib64/libkomparediff2.so.5.3.0
+/usr/lib64/libkomparediff2.so.5.4.0
 
 %files license
 %defattr(0644,root,root,0755)
